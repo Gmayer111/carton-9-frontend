@@ -1,0 +1,13 @@
+.error-message-container {
+  position: relative;
+}
+
+.error-message-container p {
+  position: absolute;
+  top: 0.2rem;
+  margin: 0;
+  font-size: $text-sm;
+  line-height: $leading-5;
+  font-weight: $font-medium;
+  color: $red-500;
+}

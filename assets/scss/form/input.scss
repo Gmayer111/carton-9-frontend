@@ -1,0 +1,32 @@
+.input-container {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-form {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: $text-sm;
+  line-height: $leading-5;
+  font-weight: $font-medium;
+  color: $grey-900;
+}
+
+.input-form {
+  background-color: $grey-50;
+  border-width: 1px;
+  border-color: $grey-400;
+  color: $grey-900;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input-form:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}

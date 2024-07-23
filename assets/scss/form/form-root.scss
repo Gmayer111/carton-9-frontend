@@ -1,0 +1,42 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-header-container h1 {
+  padding: 0;
+  margin: 0;
+  font-size: $text-2xl;
+  color: $grey-900;
+  letter-spacing: $tracking-tight;
+  line-height: $leading-tight;
+  font-weight: $font-bold;
+}
+
+.form-header-container p {
+  font-size: $text-sm;
+  font-weight: $font-light;
+  padding: 1rem 0;
+  color: $grey-500;
+  margin: 0;
+}
+
+.buttons-modal-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.bottom-text-form-container {
+  color: $grey-500;
+}
+
+.bottom-text-form-container a {
+  color: $primary-600;
+  text-decoration: none;
+}
+
+.bottom-text-form-container a:hover {
+  text-decoration: underline;
+}
