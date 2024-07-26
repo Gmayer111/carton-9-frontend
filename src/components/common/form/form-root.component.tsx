@@ -3,18 +3,18 @@ import Button from "./form-fields/button-form.component";
 import { usePathname } from "next/navigation";
 
 export type TFormRootProps = {
-  title: string;
   children: React.ReactNode;
-  handleSubmit: () => void;
-  isModal: boolean;
+  title?: string;
+  handleSubmit?: () => void;
+  isModal?: boolean;
   paragraph?: string;
   isLoading?: boolean;
 };
 
 const FormRoot = ({
   children,
-  title = "Titre",
-  paragraph = "Je suis un paragraphe",
+  title,
+  paragraph,
   handleSubmit,
   isLoading = false,
   isModal,
