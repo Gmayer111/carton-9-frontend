@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/Gmayer111/lcbd-front/compare/v1.1.0...v1.1.1) (2024-07-29)
+
+
+### Bug Fixes
+
+* adding margin to input component ([#11](https://github.com/Gmayer111/lcbd-front/issues/11)) ([33af621](https://github.com/Gmayer111/lcbd-front/commit/33af621ec6ff714c520c7f5571898f33d07e70fc))
+* remove form-root require props ([#9](https://github.com/Gmayer111/lcbd-front/issues/9)) ([dab7e08](https://github.com/Gmayer111/lcbd-front/commit/dab7e08f7efda6f6a2c46d06ab27a56bd6d395be))
+
 ## [1.1.0](https://github.com/Gmayer111/lcbd-front/compare/v1.0.0...v1.1.0) (2024-07-23)
 
 
