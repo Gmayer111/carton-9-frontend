@@ -1,7 +1,7 @@
-import React, { forwardRef } from "react";
-import { TField } from "../form.hook";
-import LabelForm from "../common/label-form.component";
-import ErrorMessage from "../common/error-message.component";
+import React, { forwardRef, useId } from "react";
+import { TField } from "../../form.hook";
+import LabelForm from "../../common/label-form.component";
+import ErrorMessage from "../../common/error-message.component";
 
 export type TInputProps = Omit<TField, "field"> & {
   name: string;
@@ -26,10 +26,12 @@ const InputForm = forwardRef<InputRef, TInputProps>(
     },
     ref
   ) => {
+    const id = useId();
     return (
       <div className="input-container">
-        <LabelForm label={label} labelFor={name} />
+        <LabelForm label={label} id={id} />
         <input
+          id={id}
           className="input-form"
           type={inputType}
           placeholder={placeholder}
