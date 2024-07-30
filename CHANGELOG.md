@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/Gmayer111/lcbd-front/compare/v1.1.1...v1.2.0) (2024-07-30)
+
+
+### Features
+
+* add input tests ([#12](https://github.com/Gmayer111/lcbd-front/issues/12)) ([2687a8b](https://github.com/Gmayer111/lcbd-front/commit/2687a8b9abac2f935e0d466c38ea3ee07078abdd))
+* move button within button folder & adding tests ([#14](https://github.com/Gmayer111/lcbd-front/issues/14)) ([8c4a7c9](https://github.com/Gmayer111/lcbd-front/commit/8c4a7c910d3e62fd8218c40580e0df1fad377f16))
+
 ## [1.1.1](https://github.com/Gmayer111/lcbd-front/compare/v1.1.0...v1.1.1) (2024-07-29)
 
 
