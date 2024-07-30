@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Gmayer111/lcbd-front/compare/v1.2.0...v1.2.1) (2024-07-30)
+
+
+### Bug Fixes
+
+* modify TField type ([#15](https://github.com/Gmayer111/lcbd-front/issues/15)) ([541ed10](https://github.com/Gmayer111/lcbd-front/commit/541ed1077683c1a1995f1f3113ee614f97cc2012))
+
 ## [1.2.0](https://github.com/Gmayer111/lcbd-front/compare/v1.1.1...v1.2.0) (2024-07-30)
 
 
