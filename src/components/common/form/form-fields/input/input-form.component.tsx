@@ -4,10 +4,7 @@ import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
 
 export type TInputProps = Omit<TField, "field"> & {
-  name: string;
-  required?: boolean;
   disabled?: boolean;
-  value?: string;
 };
 
 export type InputRef = HTMLInputElement;
@@ -19,7 +16,6 @@ const InputForm = forwardRef<InputRef, TInputProps>(
       name,
       disabled = false,
       required = true,
-      value,
       inputType,
       label,
       errorMessage,
@@ -38,7 +34,6 @@ const InputForm = forwardRef<InputRef, TInputProps>(
           name={name}
           disabled={disabled}
           required={required}
-          value={value}
           ref={ref}
         />
         <ErrorMessage errorMessage={errorMessage} />
