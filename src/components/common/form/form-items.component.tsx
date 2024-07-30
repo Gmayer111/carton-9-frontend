@@ -1,5 +1,5 @@
 import React from "react";
-import InputForm from "./form-fields/input-form.component";
+import InputForm from "./form-fields/input/input-form.component";
 import { TField } from "./form.hook";
 
 export type TFormItemsProps = {
