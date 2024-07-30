@@ -1,5 +1,5 @@
 import React from "react";
-import { TButtonType } from "../form.hook";
+import { TButtonType } from "../../form.hook";
 
 export type TButtonProps = {
   isLoading: boolean;
@@ -9,7 +9,7 @@ export type TButtonProps = {
   onClick?: () => Promise<void>;
 };
 
-const Button = React.forwardRef<HTMLButtonElement, TButtonProps>(
+const ButtonForm = React.forwardRef<HTMLButtonElement, TButtonProps>(
   ({ isLoading, children, onClick, type, isDisabled }, ref) => {
     return (
       <button
@@ -25,4 +25,4 @@ const Button = React.forwardRef<HTMLButtonElement, TButtonProps>(
   }
 );
 
-export default Button;
+export default ButtonForm;
