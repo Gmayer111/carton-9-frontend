@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./form-fields/button-form.component";
+import Button from "./form-fields/button/button-form.component";
 import { usePathname } from "next/navigation";
 
 export type TFormRootProps = {
