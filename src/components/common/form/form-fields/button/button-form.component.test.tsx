@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import ButtonForm from "./button-form.component";
-import { TButtonType } from "../../form.hook";
+import { TButtonType } from "../../form";
 
 describe("When we want to pass props to button form", () => {
   it("should add button submit type", () => {

@@ -1,5 +1,5 @@
 import React, { forwardRef, useId } from "react";
-import { TField } from "../../form.hook";
+import { TField } from "../../form";
 import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
 
@@ -12,29 +12,30 @@ export type InputRef = HTMLInputElement;
 const InputForm = forwardRef<InputRef, TInputProps>(
   (
     {
-      placeholder,
       name,
+      placeholder,
       disabled = false,
-      required = true,
       inputType,
       label,
       errorMessage,
+      ...otherProps
     },
     ref
   ) => {
     const id = useId();
+
     return (
       <div className="input-container">
         <LabelForm label={label} id={id} />
         <input
           id={id}
-          className="input-form"
+          name={name}
           type={inputType}
           placeholder={placeholder}
-          name={name}
           disabled={disabled}
-          required={required}
           ref={ref}
+          className="input-form"
+          {...otherProps}
         />
         <ErrorMessage errorMessage={errorMessage} />
       </div>

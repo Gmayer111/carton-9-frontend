@@ -1,5 +1,5 @@
 import React from "react";
-import { TButtonType } from "../../form.hook";
+import { TButtonType } from "../../form";
 
 export type TButtonProps = {
   isLoading: boolean;
