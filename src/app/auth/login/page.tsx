@@ -3,13 +3,13 @@ import Link from "next/link";
 import React from "react";
 import FormItems from "src/components/common/form/form-items.component";
 import FormRoot from "src/components/common/form/form-root.component";
-import { TField } from "src/components/common/form/form.hook";
 import {
   FieldValues,
   FormProvider,
   SubmitHandler,
   useForm,
 } from "react-hook-form";
+import { TField } from "src/components/common/form/form";
 
 const fields: TField[] = [
   {
