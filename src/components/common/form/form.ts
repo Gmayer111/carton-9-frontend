@@ -5,14 +5,21 @@ export type TField = {
   placeholder?: string;
   label?: string;
   errorMessage?: string;
+  registerOptions?: TRegisterOption;
+};
+
+export type TRegisterOption = {
   required?: boolean;
+  requiredMessage?: string;
+  regexPattern?: RegExp;
+  regexPatternMessage?: string;
 };
 
 export type TFieldElement = "input" | "select" | "textarea";
 
 export type TFieldType =
   | "text"
-  | "mail"
+  | "email"
   | "password"
   | "checkbox"
   | "date"
