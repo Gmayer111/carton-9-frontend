@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/Gmayer111/lcbd-front/compare/v1.2.1...v1.3.0) (2024-08-02)
+
+
+### Features
+
+* create login page & form ([#8](https://github.com/Gmayer111/lcbd-front/issues/8)) ([88d99fb](https://github.com/Gmayer111/lcbd-front/commit/88d99fb8e473b4d39f9057a5b7811929e3dbe13e))
+
+
+### Bug Fixes
+
+* update form type import within login page ([#18](https://github.com/Gmayer111/lcbd-front/issues/18)) ([96a6a71](https://github.com/Gmayer111/lcbd-front/commit/96a6a7186082be6019ec48c2a2d0c7e09cd3499f))
+
 ## [1.2.1](https://github.com/Gmayer111/lcbd-front/compare/v1.2.0...v1.2.1) (2024-07-30)
 
 
