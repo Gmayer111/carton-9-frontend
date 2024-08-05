@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Gmayer111/lcbd-front/compare/v1.3.0...v1.4.0) (2024-08-05)
+
+
+### Features
+
+* add axios instance ([#19](https://github.com/Gmayer111/lcbd-front/issues/19)) ([8c5c78f](https://github.com/Gmayer111/lcbd-front/commit/8c5c78f10abfe2d88f89cb02447954e523c90819))
+
 ## [1.3.0](https://github.com/Gmayer111/lcbd-front/compare/v1.2.1...v1.3.0) (2024-08-02)
 
 
