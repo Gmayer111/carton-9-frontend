@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import FormItems from "src/components/common/form/form-items.component";
 import FormRoot from "src/components/common/form/form-root.component";
 import {
@@ -10,6 +10,9 @@ import {
   useForm,
 } from "react-hook-form";
 import { TField } from "src/components/common/form/form";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import ErrorMessage from "src/components/common/form/common/error-message.component";
 
 const fields: TField[] = [
   {
@@ -41,13 +44,24 @@ export type TLoginFormValues = {
 };
 
 const Login = () => {
+  const router = useRouter();
+  const [error, setError] = useState("");
   const methods = useForm<TLoginFormValues | FieldValues>();
   const {} = methods;
 
   const handleLogin: SubmitHandler<TLoginFormValues | FieldValues> = async (
     data
   ) => {
-    console.log(data);
+    const res = await signIn("credentials", {
+      ...data,
+      redirect: false,
+    });
+
+    if (res?.error === "Unauthorized") {
+      setError("Echec de la connexion");
+    } else {
+      // router.push("/accueil");
+    }
   };
   return (
     <div className="login-container">
@@ -58,6 +72,7 @@ const Login = () => {
           onSubmit={handleLogin}
           isModal={false}
         >
+          {error && <ErrorMessage errorMessage={error} />}
           <FormItems fieldItems={fields} />
         </FormRoot>
       </FormProvider>
