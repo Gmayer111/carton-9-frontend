@@ -3,8 +3,6 @@ export type TErrorMessage = {
 };
 
 const ErrorMessage = ({ errorMessage }: TErrorMessage) => {
-  console.log(errorMessage);
-
   if (!errorMessage) return null;
 
   return (
