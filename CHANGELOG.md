@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Gmayer111/lcbd-front/compare/v1.4.0...v1.5.0) (2024-08-07)
+
+
+### Features
+
+* add user authentication ([#21](https://github.com/Gmayer111/lcbd-front/issues/21)) ([c177eb2](https://github.com/Gmayer111/lcbd-front/commit/c177eb2a6eee01a17e44bb450e8583fd0d6939eb))
+
 ## [1.4.0](https://github.com/Gmayer111/lcbd-front/compare/v1.3.0...v1.4.0) (2024-08-05)
 
 
