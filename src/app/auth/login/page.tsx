@@ -47,7 +47,6 @@ const Login = () => {
   const router = useRouter();
   const [error, setError] = useState("");
   const methods = useForm<TLoginFormValues | FieldValues>();
-  const {} = methods;
 
   const handleLogin: SubmitHandler<TLoginFormValues | FieldValues> = async (
     data
@@ -78,7 +77,8 @@ const Login = () => {
       </FormProvider>
       <div className="create-login-container">
         <p>
-          Vous n'avez pas de compte ? <Link href="#">Créer votre compte</Link>
+          Vous n'avez pas de compte ?{" "}
+          <Link href="/auth/register">Créer votre compte</Link>
         </p>
       </div>
     </div>
