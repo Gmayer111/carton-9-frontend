@@ -9,16 +9,3 @@
 .auth-layout-section {
   display: flex;
 }
-
-.left-auth-layout-container {
-  background-color: $grey-500;
-  width: 350px;
-}
-
-.left-auth-layout-container h1 {
-  color: white;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: $text-3xl;
-  font-weight: $font-bold;
-}

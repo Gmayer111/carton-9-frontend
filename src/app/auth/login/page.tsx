@@ -13,6 +13,7 @@ import { TField } from "src/components/common/form/form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import ErrorMessage from "src/components/common/form/common/error-message.component";
+import LinkForm from "src/components/common/auth/link-form.component";
 
 const fields: TField[] = [
   {
@@ -47,7 +48,6 @@ const Login = () => {
   const router = useRouter();
   const [error, setError] = useState("");
   const methods = useForm<TLoginFormValues | FieldValues>();
-  const {} = methods;
 
   const handleLogin: SubmitHandler<TLoginFormValues | FieldValues> = async (
     data
@@ -76,11 +76,11 @@ const Login = () => {
           <FormItems fieldItems={fields} />
         </FormRoot>
       </FormProvider>
-      <div className="create-login-container">
-        <p>
-          Vous n'avez pas de compte ? <Link href="#">Créer votre compte</Link>
-        </p>
-      </div>
+      <LinkForm
+        textContent="Vous n'avez pas de compte ?"
+        path="/auth/register"
+        linkContent="&thinsp;Créez votre compte"
+      />
     </div>
   );
 };
