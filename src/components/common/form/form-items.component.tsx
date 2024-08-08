@@ -5,16 +5,17 @@ import { useFormContext } from "react-hook-form";
 
 export type TFormItemsProps = {
   fieldItems: TField[];
+  isGlobalForm?: boolean;
 };
 
-const FormItems = ({ fieldItems }: TFormItemsProps) => {
+const FormItems = ({ fieldItems, isGlobalForm }: TFormItemsProps) => {
   const {
     register,
     formState: { errors },
   } = useFormContext();
 
   return (
-    <div>
+    <div className="form-items-container">
       {fieldItems.map((fieldItem) => {
         const { field, inputType, placeholder, label, name, registerOptions } =
           fieldItem;
@@ -23,6 +24,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
           <div>
             {field === "input" && (
               <InputForm
+                isGlobalForm={isGlobalForm}
                 inputType={inputType}
                 placeholder={placeholder}
                 label={label}

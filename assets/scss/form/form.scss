@@ -2,6 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  // height: 400px;
 }
 .form-header-container h1 {
   padding: 0;
@@ -39,4 +40,10 @@ form {
 
 .bottom-text-form-container a:hover {
   text-decoration: underline;
+}
+
+.form-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

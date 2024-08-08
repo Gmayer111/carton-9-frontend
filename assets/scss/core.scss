@@ -1,6 +1,6 @@
 @import "./utilities/_variables";
 
-@import "./form/form-root.scss";
+@import "./form/form.scss";
 @import "./form/button.scss";
 @import "./form/input.scss";
 @import "./form/error-message.scss";
@@ -9,4 +9,4 @@
 @import "./layout/auth-layout.scss";
 @import "./layout/login-layout.scss";
 
-@import "./auth/login.scss";
+@import "./auth/global-auth.scss";
