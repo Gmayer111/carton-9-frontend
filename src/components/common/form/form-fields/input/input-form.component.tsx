@@ -1,15 +1,14 @@
 import React, { forwardRef, useId } from "react";
-import { TField } from "../../form";
+import { TFieldItem, TInputForm } from "../../form";
 import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
 
-export type TInputProps = Omit<TField, "field"> & {
-  disabled?: boolean;
-};
+type InputFormRef = HTMLInputElement;
 
-export type InputRef = HTMLInputElement;
-
-const InputForm = forwardRef<InputRef, TInputProps>(
+const InputForm = forwardRef<
+  InputFormRef,
+  Omit<TFieldItem, "fieldElement"> & TInputForm
+>(
   (
     {
       name,

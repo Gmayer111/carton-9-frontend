@@ -4,15 +4,6 @@
   flex-direction: column;
 }
 
-.label-form {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: $text-sm;
-  line-height: $leading-5;
-  font-weight: $font-medium;
-  color: $grey-900;
-}
-
 .input-form {
   background-color: $grey-50;
   border-width: 1px;
@@ -22,7 +13,7 @@
   padding: 0.625rem;
   display: block;
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
 }
 
 .input-form:focus {
