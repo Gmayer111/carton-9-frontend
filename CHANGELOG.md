@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/Gmayer111/lcbd-front/compare/v1.5.0...v1.6.0) (2024-08-13)
+
+
+### Features
+
+* create link component ([#23](https://github.com/Gmayer111/lcbd-front/issues/23)) ([8957a72](https://github.com/Gmayer111/lcbd-front/commit/8957a72c566a49516c2191bd9f40862922d89eef))
+* refacto and complete form ([#25](https://github.com/Gmayer111/lcbd-front/issues/25)) ([fd62ebf](https://github.com/Gmayer111/lcbd-front/commit/fd62ebfba527679344772dbc8916967c12ed3a07))
+
 ## [1.5.0](https://github.com/Gmayer111/lcbd-front/compare/v1.4.0...v1.5.0) (2024-08-07)
 
 
