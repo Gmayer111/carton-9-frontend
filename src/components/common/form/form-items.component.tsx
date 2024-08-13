@@ -1,10 +1,12 @@
 import React from "react";
 import InputForm from "./form-fields/input/input-form.component";
-import { TField } from "./form";
 import { useFormContext } from "react-hook-form";
+import TextareaForm from "./form-fields/textarea/textarea-form.component";
+import SelectForm from "./form-fields/select/select-form.component";
+import { TFields } from "./form";
 
 export type TFormItemsProps = {
-  fieldItems: TField[];
+  fieldItems: TFields[];
 };
 
 const FormItems = ({ fieldItems }: TFormItemsProps) => {
@@ -13,35 +15,60 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
     formState: { errors },
   } = useFormContext();
 
-  return (
-    <div>
-      {fieldItems.map((fieldItem) => {
-        const { field, inputType, placeholder, label, name, registerOptions } =
-          fieldItem;
+  const fieldPosition = (fieldItem: TFields) => {
+    return fieldItem.items.map((item) => {
+      switch (item.fieldElement) {
+        case "input":
+          return (
+            <InputForm
+              inputType={item.inputType}
+              placeholder={item.placeholder}
+              label={item.label}
+              errorMessage={
+                errors[item.name]?.message &&
+                (errors[item.name]?.message as string)
+              }
+              {...register(item.name, item.registerOptions)}
+            />
+          );
+        case "textarea":
+          return (
+            <TextareaForm
+              placeholder={item.placeholder}
+              label={item.label}
+              errorMessage={
+                errors[item.name]?.message &&
+                (errors[item.name]?.message as string)
+              }
+              {...register(item.name, item.registerOptions)}
+            />
+          );
+        case "select":
+          return (
+            <SelectForm
+              selectOptions={item.selectOptions}
+              placeholder={item.placeholder}
+              label={item.label}
+              errorMessage={
+                errors[item.name]?.message &&
+                (errors[item.name]?.message as string)
+              }
+              {...register(item.name, item.registerOptions)}
+            />
+          );
+        default:
+          break;
+      }
+    });
+  };
 
-        return (
-          <div>
-            {field === "input" && (
-              <InputForm
-                inputType={inputType}
-                placeholder={placeholder}
-                label={label}
-                errorMessage={
-                  errors[name]?.message && (errors[name]?.message as string)
-                }
-                {...register(name, {
-                  required: {
-                    value: registerOptions?.required as boolean,
-                    message: registerOptions?.requiredMessage as string,
-                  },
-                  pattern: {
-                    value: registerOptions?.regexPattern as RegExp,
-                    message: registerOptions?.regexPatternMessage as string,
-                  },
-                })}
-              />
-            )}
-          </div>
+  return (
+    <div className="form-items-container">
+      {fieldItems.map((fieldItem) => {
+        return fieldItem.columnSide === "left" ? (
+          <div>{fieldPosition(fieldItem)}</div>
+        ) : (
+          <div>{fieldPosition(fieldItem)}</div>
         );
       })}
     </div>

@@ -40,3 +40,31 @@ form {
 .bottom-text-form-container a:hover {
   text-decoration: underline;
 }
+
+.form-items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.label-form {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: $text-sm;
+  line-height: $leading-5;
+  font-weight: $font-medium;
+  color: $grey-900;
+}
+
+.error-message-container {
+  position: relative;
+}
+
+.error-message-container p {
+  position: absolute;
+  top: 0.2rem;
+  margin: 0;
+  font-size: $text-sm;
+  line-height: $leading-5;
+  font-weight: $font-medium;
+  color: $red-500;
+}

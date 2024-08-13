@@ -1,8 +1,6 @@
-export type TErrorMessage = {
-  errorMessage?: string;
-};
+import { TFieldItem } from "../form";
 
-const ErrorMessage = ({ errorMessage }: TErrorMessage) => {
+const ErrorMessage = ({ errorMessage }: Pick<TFieldItem, "errorMessage">) => {
   if (!errorMessage) return null;
 
   return (

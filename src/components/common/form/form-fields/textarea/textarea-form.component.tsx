@@ -1,39 +1,30 @@
 import React, { forwardRef, useId } from "react";
-import { TFieldItem, TInputForm } from "../../form";
+import { TFieldItem } from "../../form";
 import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
 
-type InputFormRef = HTMLInputElement;
+type TextAreaFormRef = HTMLTextAreaElement;
 
-const InputForm = forwardRef<
-  InputFormRef,
-  Omit<TFieldItem, "fieldElement"> & TInputForm
+const TextareaForm = forwardRef<
+  TextAreaFormRef,
+  Omit<TFieldItem, "fieldElement">
 >(
   (
-    {
-      name,
-      placeholder,
-      disabled = false,
-      inputType,
-      label,
-      errorMessage,
-      ...otherProps
-    },
+    { name, placeholder, disabled, label, errorMessage, ...otherProps },
     ref
   ) => {
     const id = useId();
 
     return (
-      <div className="input-container">
+      <div className="textarea-container">
         <LabelForm label={label} id={id} />
-        <input
+        <textarea
           id={id}
           name={name}
-          type={inputType}
           placeholder={placeholder}
           disabled={disabled}
           ref={ref}
-          className="input-form"
+          className="textarea-form"
           {...otherProps}
         />
         <ErrorMessage errorMessage={errorMessage} />
@@ -42,4 +33,4 @@ const InputForm = forwardRef<
   }
 );
 
-export default InputForm;
+export default TextareaForm;

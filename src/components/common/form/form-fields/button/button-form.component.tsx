@@ -1,15 +1,7 @@
 import React from "react";
-import { TButtonType } from "../../form";
+import { TButtonForm } from "../../form";
 
-export type TButtonProps = {
-  isLoading: boolean;
-  type: TButtonType;
-  children: string;
-  isDisabled?: boolean;
-  onClick?: () => Promise<void>;
-};
-
-const ButtonForm = React.forwardRef<HTMLButtonElement, TButtonProps>(
+const ButtonForm = React.forwardRef<HTMLButtonElement, TButtonForm>(
   ({ isLoading, children, onClick, type, isDisabled }, ref) => {
     return (
       <button

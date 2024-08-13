@@ -1,21 +1,25 @@
-export type TField = {
-  field: TFieldElement;
-  name: string;
-  inputType?: TFieldType;
-  placeholder?: string;
-  label?: string;
-  errorMessage?: string;
-  registerOptions?: TRegisterOption;
+import { FieldValues, RegisterOptions } from "react-hook-form";
+
+export type TFields = {
+  items: (TFieldItem & TInputForm & TSelectForm)[];
+  columnSide?: "left" | "right";
 };
 
-export type TRegisterOption = {
-  required?: boolean;
-  requiredMessage?: string;
-  regexPattern?: RegExp;
-  regexPatternMessage?: string;
+export type TFieldItem = {
+  fieldElement: TFieldElement;
+  name: string;
+  placeholder?: string;
+  disabled?: boolean;
+  label?: string;
+  errorMessage?: string;
+  registerOptions?: RegisterOptions<FieldValues, string>;
 };
 
 export type TFieldElement = "input" | "select" | "textarea";
+
+export type TInputForm = {
+  inputType?: TFieldType;
+};
 
 export type TFieldType =
   | "text"
@@ -24,6 +28,24 @@ export type TFieldType =
   | "checkbox"
   | "date"
   | "radio"
-  | "tel";
+  | "tel"
+  | "file";
+
+export type TSelectForm = {
+  selectOptions?: selectOption[];
+};
+
+type selectOption = {
+  value: string;
+  content: string;
+};
+
+export type TButtonForm = {
+  isLoading: boolean;
+  type: TButtonType;
+  children: string;
+  isDisabled?: boolean;
+  onClick?: () => Promise<void>;
+};
 
 export type TButtonType = "submit" | "reset" | "button" | undefined;
