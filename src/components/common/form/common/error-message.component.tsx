@@ -5,7 +5,7 @@ const ErrorMessage = ({ errorMessage }: Pick<TFieldItem, "errorMessage">) => {
 
   return (
     <div className="error-message-container">
-      <p>{errorMessage}</p>
+      <span role="alert">{errorMessage}</span>
     </div>
   );
 };
