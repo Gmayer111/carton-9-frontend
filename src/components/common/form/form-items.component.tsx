@@ -21,6 +21,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
         case "input":
           return (
             <InputForm
+              key={item.name}
               inputType={item.inputType}
               placeholder={item.placeholder}
               label={item.label}
@@ -34,6 +35,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
         case "textarea":
           return (
             <TextareaForm
+              key={item.name}
               placeholder={item.placeholder}
               label={item.label}
               errorMessage={
@@ -46,6 +48,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
         case "select":
           return (
             <SelectForm
+              key={item.name}
               selectOptions={item.selectOptions}
               placeholder={item.placeholder}
               label={item.label}
@@ -66,9 +69,9 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
     <div className="form-items-container">
       {fieldItems.map((fieldItem) => {
         return fieldItem.columnSide === "left" ? (
-          <div>{fieldPosition(fieldItem)}</div>
+          <div key={fieldItem.columnSide}>{fieldPosition(fieldItem)}</div>
         ) : (
-          <div>{fieldPosition(fieldItem)}</div>
+          <div key={fieldItem.columnSide}>{fieldPosition(fieldItem)}</div>
         );
       })}
     </div>
