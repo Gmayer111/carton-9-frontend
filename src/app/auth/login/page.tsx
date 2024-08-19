@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
 import FormItems from "src/components/common/form/form-items.component";
 import FormRoot from "src/components/common/form/form-root.component";
@@ -9,33 +8,46 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
-import { TField } from "src/components/common/form/form";
+import { TFields } from "src/components/common/form/form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import ErrorMessage from "src/components/common/form/common/error-message.component";
 import LinkForm from "src/components/common/auth/link-form.component";
 
-const fields: TField[] = [
+const fields: TFields[] = [
   {
-    field: "input",
-    placeholder: "votre email",
-    label: "Email",
-    name: "email",
-    registerOptions: {
-      required: true,
-      requiredMessage: "Email obligatoire",
-    },
-  },
-  {
-    field: "input",
-    inputType: "password",
-    placeholder: "votre mot de passe",
-    label: "Mot de passe",
-    name: "password",
-    registerOptions: {
-      required: true,
-      requiredMessage: "Mot de passe obligatoire",
-    },
+    columnSide: "left",
+    items: [
+      {
+        fieldElement: "input",
+        placeholder: "votre email",
+        label: "Email",
+        name: "email",
+        registerOptions: {
+          required: {
+            value: true,
+            message: "L'email est obligatoire",
+          },
+          pattern: {
+            value: /\S+@\S+\.\S+/,
+            message: "Le format de l'email n'est pas bon",
+          },
+        },
+      },
+      {
+        fieldElement: "input",
+        inputType: "password",
+        placeholder: "votre mot de passe",
+        label: "Mot de passe",
+        name: "password",
+        registerOptions: {
+          required: {
+            value: true,
+            message: "Le mot de passe est obligatoire",
+          },
+        },
+      },
+    ],
   },
 ];
 
