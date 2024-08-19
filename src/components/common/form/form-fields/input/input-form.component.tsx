@@ -34,6 +34,7 @@ const InputForm = forwardRef<
           disabled={disabled}
           ref={ref}
           className="input-form"
+          aria-label={label}
           {...otherProps}
         />
         <ErrorMessage errorMessage={errorMessage} />
