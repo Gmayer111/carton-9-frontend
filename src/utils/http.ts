@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
-const baseURL = process.env.API_URL || "http://localhost:3000/auth/login";
+const baseURL = process.env.API_URL || "http://localhost:3000";
 
 export const http = axios.create({
   baseURL,
@@ -12,3 +12,4 @@ export const http = axios.create({
 export const setToken = (token: string) => {
   http.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
+
