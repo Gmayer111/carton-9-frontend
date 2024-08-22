@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/Gmayer111/lcbd-front/compare/v1.6.0...v1.7.0) (2024-08-22)
+
+
+### Features
+
+* create register page ([#28](https://github.com/Gmayer111/lcbd-front/issues/28)) ([328cb1b](https://github.com/Gmayer111/lcbd-front/commit/328cb1ba86c4a895a10dc664080928cc399e8ac2))
+* update login page fields and tests ([#26](https://github.com/Gmayer111/lcbd-front/issues/26)) ([0c1d16a](https://github.com/Gmayer111/lcbd-front/commit/0c1d16af37b10eea490b3ab4cf3187bf088eb609))
+
 ## [1.6.0](https://github.com/Gmayer111/lcbd-front/compare/v1.5.0...v1.6.0) (2024-08-13)
 
 
