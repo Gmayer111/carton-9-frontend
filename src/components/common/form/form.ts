@@ -1,3 +1,4 @@
+import React from "react";
 import { FieldValues, RegisterOptions } from "react-hook-form";
 
 export type TFields = {
@@ -41,11 +42,12 @@ type selectOption = {
 };
 
 export type TButtonForm = {
-  isLoading: boolean;
-  type: TButtonType;
-  children: string;
+  children?: React.ReactNode;
+  type?: TButtonType;
+  isLoading?: boolean;
   isDisabled?: boolean;
-  onClick?: () => Promise<void>;
+  onClick?: () => Promise<void> | void;
+  hasDropdownIconButton?: boolean;
 };
 
 export type TButtonType = "submit" | "reset" | "button" | undefined;
