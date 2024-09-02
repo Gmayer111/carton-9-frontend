@@ -7,7 +7,7 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
-import LinkForm from "src/components/common/auth/link-form.component";
+import LinkForm from "src/components/auth/link-form.component";
 import ErrorMessage from "src/components/common/form/common/error-message.component";
 import { TFields } from "src/components/common/form/form";
 import FormItems from "src/components/common/form/form-items.component";
@@ -26,7 +26,7 @@ export type TRegisterFormValues = {
   picture?: string;
 };
 
-const Register = () => {
+export default function Page() {
   const methods = useForm<TRegisterFormValues | FieldValues>();
   const [error, setError] = useState<string>();
   const router = useRouter();
@@ -168,6 +168,4 @@ const Register = () => {
       />
     </div>
   );
-};
-
-export default Register;
+}

@@ -12,7 +12,7 @@ import { TFields } from "src/components/common/form/form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import ErrorMessage from "src/components/common/form/common/error-message.component";
-import LinkForm from "src/components/common/auth/link-form.component";
+import LinkForm from "src/components/auth/link-form.component";
 
 const fields: TFields[] = [
   {
@@ -56,7 +56,7 @@ export type TLoginFormValues = {
   password: string;
 };
 
-const Login = () => {
+export default function Page() {
   const router = useRouter();
   const [error, setError] = useState("");
   const methods = useForm<TLoginFormValues | FieldValues>();
@@ -95,6 +95,4 @@ const Login = () => {
       />
     </div>
   );
-};
-
-export default Login;
+}
