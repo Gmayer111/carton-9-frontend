@@ -4,7 +4,7 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow: hidden;
   border-radius: 0.5rem;
-  width: 1280px;
+  width: 1160px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
@@ -70,4 +70,10 @@ tbody tr td:last-child {
   align-items: center;
   justify-content: center;
   padding: 1rem 0.875rem;
+}
+
+@media screen and (min-width: 1536px) {
+  .table-root-container {
+    width: 1660px;
+  }
 }
