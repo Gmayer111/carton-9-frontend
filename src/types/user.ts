@@ -1,10 +1,11 @@
 export type TUser = {
-  firstName: string;
-  lastName: string;
   email: string;
-  password: string;
+  lastName: string;
+  firstName: string;
+  password?: string;
+  id?: number;
   birthdate?: Date;
   description?: string;
   nationality?: string;
-  picture?: string;
+  picture?: string | null;
 };
