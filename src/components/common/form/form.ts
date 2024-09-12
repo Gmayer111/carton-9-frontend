@@ -47,7 +47,7 @@ export type TButtonForm = {
   isLoading?: boolean;
   isDisabled?: boolean;
   onClick?: () => Promise<void> | void;
-  hasDropdownIconButton?: boolean;
+  hasIconButton?: boolean;
 };
 
 export type TButtonType = "submit" | "reset" | "button" | undefined;
