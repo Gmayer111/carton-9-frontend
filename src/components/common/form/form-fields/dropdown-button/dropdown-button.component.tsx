@@ -22,7 +22,7 @@ const DropdownButton = React.forwardRef<
       children,
       handleActionList,
       isDisabled,
-      hasDropdownIconButton,
+      hasIconButton,
       listItems,
     },
     ref
@@ -35,14 +35,14 @@ const DropdownButton = React.forwardRef<
     return (
       <div className="dropwdown-button-container">
         <ButtonForm
-          hasDropdownIconButton={hasDropdownIconButton}
+          hasIconButton={hasIconButton}
           onClick={() => setDisplayList(true)}
           isLoading={isLoading}
           isDisabled={isDisabled}
           ref={ref}
           type="button"
         >
-          {hasDropdownIconButton ? (
+          {hasIconButton ? (
             <svg
               aria-hidden="true"
               fill="currentColor"
