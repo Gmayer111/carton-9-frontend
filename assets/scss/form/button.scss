@@ -35,3 +35,26 @@
   height: 0.625rem;
   margin-inline-start: 0.75rem;
 }
+
+.button-container .neutral {
+  color: $grey-500;
+  border-color: $grey-200;
+  box-shadow: none;
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.button-container .neutral:hover {
+  background-color: $grey-100;
+}
+
+.button-container .alert {
+  background-color: $red-600;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.button-container .alert:hover {
+  background-color: $red-700;
+  border-color: transparent;
+}
