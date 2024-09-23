@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.8.0](https://github.com/Gmayer111/lcbd-front/compare/v1.7.0...v1.8.0) (2024-09-23)
+
+
+### Features
+
+* add button colors ([#40](https://github.com/Gmayer111/lcbd-front/issues/40)) ([e9e5360](https://github.com/Gmayer111/lcbd-front/commit/e9e5360a712cfd45831795d0f43edc9bcaefc416))
+* add session provider and redirect login user ([#43](https://github.com/Gmayer111/lcbd-front/issues/43)) ([cd1b69d](https://github.com/Gmayer111/lcbd-front/commit/cd1b69df0ed7fc4bc01701114db1cb2a0b760ef8))
+* add signout action to sidebar ([#48](https://github.com/Gmayer111/lcbd-front/issues/48)) ([937f308](https://github.com/Gmayer111/lcbd-front/commit/937f3089176f1696c117135768ad6a669cf0b44d))
+* clean login page and add token to axios interceptors ([#47](https://github.com/Gmayer111/lcbd-front/issues/47)) ([8c2a17f](https://github.com/Gmayer111/lcbd-front/commit/8c2a17fbd3ddf727ffcb0665874f9ce18b0c0e22))
+* create cancel modal ([#39](https://github.com/Gmayer111/lcbd-front/issues/39)) ([3f526ea](https://github.com/Gmayer111/lcbd-front/commit/3f526ea0c91cba87ddc6196448cb855a8b0996fc))
+* create dropdown button ([#29](https://github.com/Gmayer111/lcbd-front/issues/29)) ([3c1a387](https://github.com/Gmayer111/lcbd-front/commit/3c1a387d175a95197005d3a6fcb6d845a5bc8501))
+* create modal ([#36](https://github.com/Gmayer111/lcbd-front/issues/36)) ([888d49b](https://github.com/Gmayer111/lcbd-front/commit/888d49b19b5f4d9b37330d61855ac21062f83848))
+* create sidebar ([#32](https://github.com/Gmayer111/lcbd-front/issues/32)) ([56e41eb](https://github.com/Gmayer111/lcbd-front/commit/56e41eb459ff8302b502a8dde9c8b78aaa82ed60))
+* create table ([#31](https://github.com/Gmayer111/lcbd-front/issues/31)) ([3ffdb6e](https://github.com/Gmayer111/lcbd-front/commit/3ffdb6eb77ea03690f6dded5b0c27fe8b1a71196))
+* create table dashboard component ([#45](https://github.com/Gmayer111/lcbd-front/issues/45)) ([168c6a6](https://github.com/Gmayer111/lcbd-front/commit/168c6a69710c51b6a8d32f40815e5c9d209d203f))
+* create useClickOutside hook ([#46](https://github.com/Gmayer111/lcbd-front/issues/46)) ([b5128bd](https://github.com/Gmayer111/lcbd-front/commit/b5128bdc1cdf90657a033b8b3965c3e33d19bfa4))
+* create users dashboard page ([#35](https://github.com/Gmayer111/lcbd-front/issues/35)) ([1fe85fc](https://github.com/Gmayer111/lcbd-front/commit/1fe85fc272cfdbccf7ece009c5570e680542789c))
+* refacto list behavior & add useCLickOutside hook ([#41](https://github.com/Gmayer111/lcbd-front/issues/41)) ([a9b7f32](https://github.com/Gmayer111/lcbd-front/commit/a9b7f322455cee7700551ad855ca70f6196be471))
+* update form and button form ([#44](https://github.com/Gmayer111/lcbd-front/issues/44)) ([3c71ff2](https://github.com/Gmayer111/lcbd-front/commit/3c71ff2110fdec9ece676b85e26a315d99ae5d24))
+
+
+### Bug Fixes
+
+* move link item and rename authz pages ([#33](https://github.com/Gmayer111/lcbd-front/issues/33)) ([c282c8b](https://github.com/Gmayer111/lcbd-front/commit/c282c8b8b385dd5c0584c240d737a3b232ebc8e0))
+* refacto create & edit modal ([#42](https://github.com/Gmayer111/lcbd-front/issues/42)) ([604e465](https://github.com/Gmayer111/lcbd-front/commit/604e4654dd7a4c62e74439812a1565d9ed42f88a))
+* rename button with icon only ([#37](https://github.com/Gmayer111/lcbd-front/issues/37)) ([156ec4b](https://github.com/Gmayer111/lcbd-front/commit/156ec4b21eef1903995555914c32fd73d9058820))
+* rename button with icon type ([#38](https://github.com/Gmayer111/lcbd-front/issues/38)) ([d946dea](https://github.com/Gmayer111/lcbd-front/commit/d946dea0b456a6d3cd3fbd039ddebcf0227a5a06))
+* update responsive table width ([#34](https://github.com/Gmayer111/lcbd-front/issues/34)) ([5b6b24f](https://github.com/Gmayer111/lcbd-front/commit/5b6b24fb6b860e736a77257632ac38be8d9dbab7))
+
 ## [1.7.0](https://github.com/Gmayer111/lcbd-front/compare/v1.6.0...v1.7.0) (2024-08-22)
 
 
