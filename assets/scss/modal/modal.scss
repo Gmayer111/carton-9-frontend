@@ -90,3 +90,10 @@
   height: 2.75rem;
   color: $grey-400;
 }
+
+.buttons-action-modal-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}

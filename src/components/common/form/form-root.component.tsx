@@ -7,9 +7,9 @@ export type TFormRootProps = {
   methods: UseFormReturn<FieldValues, any, undefined>;
   onSubmit: SubmitHandler<FieldValues>;
   title?: string;
-  isModal?: boolean;
   paragraph?: string;
   isLoading?: boolean;
+  isModalForm?: boolean;
 };
 
 const FormRoot = ({
@@ -18,8 +18,8 @@ const FormRoot = ({
   paragraph,
   onSubmit,
   isLoading = false,
-  isModal,
   methods,
+  isModalForm,
 }: TFormRootProps) => {
   return (
     <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -28,12 +28,15 @@ const FormRoot = ({
         {paragraph && <p>{paragraph}</p>}
       </div>
       {children}
-      <div className={isModal ? "buttons-modal-container" : ""}>
-        <Button type={"submit"} isLoading={isLoading} children="Se connecter" />
-        {isModal && (
-          <Button type={"button"} isLoading={isLoading} children="Annuler" />
-        )}
-      </div>
+      {!isModalForm && (
+        <div>
+          <Button
+            type={"submit"}
+            isLoading={isLoading}
+            children="Se connecter"
+          />
+        </div>
+      )}
     </form>
   );
 };
