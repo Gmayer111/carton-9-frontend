@@ -1,17 +1,32 @@
 "use client";
 import React, { ReactNode } from "react";
 
-type TableProps<T, K extends keyof T> = {
-  columns: Array<ColumnDefinitionType<T, K>>;
+export type TTableProps<T, K extends keyof T> = {
+  columns: Array<TColumnDefinitionType<T, K>>;
   data: Array<T>;
+  selectedItem?: any;
 };
 
-export type ColumnDefinitionType<T, K extends keyof T> = {
+export type TColumnDefinitionType<T, K extends keyof T> = {
   key: K;
   header?: string | number | ReactNode;
 };
 
-const Table = <T, K extends keyof T>({ data, columns }: TableProps<T, K>) => {
+export type TTableGeneric<T> = {
+  [key in keyof T]:
+    | {
+        data: string | number | boolean | undefined | null;
+      }
+    | ReactNode
+    | object;
+};
+
+const Table = <T, K extends keyof T>({
+  data,
+  columns,
+  selectedItem,
+}: TTableProps<T, K>) => {
+
   return (
     <section>
       <div className="table-container">
@@ -24,8 +39,8 @@ const Table = <T, K extends keyof T>({ data, columns }: TableProps<T, K>) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, index) => (
-              <tr key={`row-${index}`}>
+            {data?.map((row, index) => (
+              <tr onClick={() => selectedItem(row)} key={`row-${index}`}>
                 {columns.map((column, index2) => (
                   <td key={`cell-${index2}`}>{row[column.key] as ReactNode}</td>
                 ))}
