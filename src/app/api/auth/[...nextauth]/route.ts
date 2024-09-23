@@ -29,7 +29,6 @@ const authOptions: AuthOptions = {
           return json;
         } else {
           const data = await res.json();
-          console.log("message", data.message);
           if ([401, 403].includes(res.status)) {
             throw new Error(data.message);
           }
@@ -39,10 +38,10 @@ const authOptions: AuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account, profile, user }) {
+    async jwt({ token, account, user }) {
       if (account) {
-        token.accessToken = user.access_token;
-        // token.id = profile?.name;
+        token.access_token = user.access_token;
+        token.role = user.role;
       }
 
       return token;
@@ -57,10 +56,11 @@ const authOptions: AuthOptions = {
       return session;
     },
   },
+
   pages: {
     signIn: "/auth/login",
   },
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
