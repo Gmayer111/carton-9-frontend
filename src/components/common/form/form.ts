@@ -48,6 +48,7 @@ export type TButtonForm = {
   isDisabled?: boolean;
   onClick?: () => Promise<void> | void;
   hasIconButton?: boolean;
+  colorButton?: "neutral" | "alert" | "primary";
 };
 
 export type TButtonType = "submit" | "reset" | "button" | undefined;
