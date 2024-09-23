@@ -1,8 +1,4 @@
 "use client";
-<<<<<<< Updated upstream
-=======
-import { signOut } from "next-auth/react";
->>>>>>> Stashed changes
 import React from "react";
 import ButtonForm from "src/components/common/form/form-fields/button/button-form.component";
 import TableHeader from "src/components/common/table/table-header.component";
