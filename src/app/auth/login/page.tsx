@@ -10,7 +10,7 @@ import {
 } from "react-hook-form";
 import { TFields } from "src/components/common/form/form";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import ErrorMessage from "src/components/common/form/common/error-message.component";
 import LinkForm from "src/components/auth/link-form.component";
 
@@ -72,18 +72,13 @@ export default function Page() {
     if (res?.error === "Unauthorized") {
       setError("Echec de la connexion");
     } else {
-      // router.push("/accueil");
+      router.replace("/admin");
     }
   };
   return (
     <div className="login-container">
       <FormProvider {...methods}>
-        <FormRoot
-          title="Se connecter"
-          methods={methods}
-          onSubmit={handleLogin}
-          isModal={false}
-        >
+        <FormRoot title="Se connecter" methods={methods} onSubmit={handleLogin}>
           {error && <ErrorMessage errorMessage={error} />}
           <FormItems fieldItems={fields} />
         </FormRoot>
