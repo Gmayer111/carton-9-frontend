@@ -133,7 +133,7 @@ export default function Page() {
     },
   });
 
-  const handleSubmitUser: SubmitHandler<TAuthor | FieldValues> = (data) => {
+  const handleSubmitAuthor: SubmitHandler<TAuthor | FieldValues> = (data) => {
     updateOrCreateMutation.mutate(data);
   };
 
@@ -147,7 +147,7 @@ export default function Page() {
     },
   });
 
-  const handleDeleteUser = async () => {
+  const handleDeleteAuthor = async () => {
     deleteMutation.mutate();
     handleCloseModal();
   };
@@ -212,7 +212,7 @@ export default function Page() {
         isEditModal={isEditModal}
         closeModal={handleCloseModal}
         formMethods={methods}
-        handleSubmit={handleSubmitUser}
+        handleSubmit={handleSubmitAuthor}
         modalHeaderTitle={
           isOpenModal ? "Ajouter un auteur" : "Modifier un auteur"
         }
@@ -220,7 +220,7 @@ export default function Page() {
       <CancelModal
         displayModal={isOpenCancelModal}
         closeModal={handleCloseModal}
-        handleDeleteItem={handleDeleteUser}
+        handleDeleteItem={handleDeleteAuthor}
       />
     </div>
   );
