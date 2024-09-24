@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/Gmayer111/lcbd-front/compare/v1.8.0...v1.9.0) (2024-09-24)
+
+
+### Features
+
+* add link to table ([#51](https://github.com/Gmayer111/lcbd-front/issues/51)) ([f8280e5](https://github.com/Gmayer111/lcbd-front/commit/f8280e5b00c90b12d585d4b1b44a6b14ad1cadb9))
+* create authors dashboard page ([#49](https://github.com/Gmayer111/lcbd-front/issues/49)) ([8e9094c](https://github.com/Gmayer111/lcbd-front/commit/8e9094cd866e19a4bac4a6ecb7a75a3cc8d30e68))
+
 ## [1.8.0](https://github.com/Gmayer111/lcbd-front/compare/v1.7.0...v1.8.0) (2024-09-23)
 
 
