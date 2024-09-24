@@ -5,6 +5,7 @@ import {
   ArrowRightEndOnRectangleIcon,
   BookOpenIcon,
   PaintBrushIcon,
+  TagIcon,
   UserIcon,
 } from "@heroicons/react/24/solid";
 import { signOut } from "next-auth/react";
@@ -26,6 +27,11 @@ const sidebarItems: Array<TSidebarItems> = [
     path: "/admin/dashboard/authors",
     icon: <PaintBrushIcon />,
     content: "Auteurs",
+  },
+  {
+    path: "/admin/dashboard/categories",
+    icon: <TagIcon />,
+    content: "Catégories",
   },
 ];
 
