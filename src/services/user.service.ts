@@ -7,18 +7,18 @@ type TUserService = TService<AxiosResponse<TUser[], any>>;
 
 export const UserService: TUserService = {
   create: (data) => {
-    return http.post("/user", data);
+    return http.post("/users", data);
   },
   update: (id, data) => {
-    return http.put(`/user/${id}`, data);
+    return http.put(`/users/${id}`, data);
   },
   delete: (id) => {
-    return http.delete(`/user/${id}`);
+    return http.delete(`/users/${id}`);
   },
   getById: (id) => {
-    return http.get(`/user/${id}`);
+    return http.get(`/users/${id}`);
   },
   getAll: () => {
-    return http.get("/user");
+    return http.get("/users");
   },
 };
