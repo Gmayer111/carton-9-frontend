@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { ReactNode } from "react";
 
 export type TTableProps<T, K extends keyof T> = {
@@ -26,7 +27,6 @@ const Table = <T, K extends keyof T>({
   columns,
   selectedItem,
 }: TTableProps<T, K>) => {
-
   return (
     <section>
       <div className="table-container">
@@ -41,9 +41,20 @@ const Table = <T, K extends keyof T>({
           <tbody>
             {data?.map((row, index) => (
               <tr onClick={() => selectedItem(row)} key={`row-${index}`}>
-                {columns.map((column, index2) => (
-                  <td key={`cell-${index2}`}>{row[column.key] as ReactNode}</td>
-                ))}
+                {columns.map((column, index2) => {
+                  const rowContent = row[column.key] as ReactNode;
+                  return (
+                    <td key={`cell-${index2}`}>
+                      {rowContent?.toString().includes("http") ? (
+                        <Link target="_blank" href={rowContent.toString()}>
+                          {rowContent}
+                        </Link>
+                      ) : (
+                        rowContent
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
