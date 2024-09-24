@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.10.0](https://github.com/Gmayer111/lcbd-front/compare/v1.9.0...v1.10.0) (2024-09-24)
+
+
+### Features
+
+* create categories dashboard page ([#52](https://github.com/Gmayer111/lcbd-front/issues/52)) ([6ff92b7](https://github.com/Gmayer111/lcbd-front/commit/6ff92b7b760b0add047964947972d9d036c500c6))
+
+
+### Bug Fixes
+
+* modify user API path ([#54](https://github.com/Gmayer111/lcbd-front/issues/54)) ([a3a77a3](https://github.com/Gmayer111/lcbd-front/commit/a3a77a3bb61c8614032db1acf2070b89249c9700))
+* rename author handle submit actions ([#55](https://github.com/Gmayer111/lcbd-front/issues/55)) ([c0223c3](https://github.com/Gmayer111/lcbd-front/commit/c0223c3eb157f08ad718d419992ce2b50c5d0410))
+
 ## [1.9.0](https://github.com/Gmayer111/lcbd-front/compare/v1.8.0...v1.9.0) (2024-09-24)
 
 
