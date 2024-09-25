@@ -5,6 +5,7 @@ import {
   ArrowRightEndOnRectangleIcon,
   BookOpenIcon,
   FolderIcon,
+  HomeModernIcon,
   PaintBrushIcon,
   TagIcon,
   UserIcon,
@@ -38,6 +39,11 @@ const sidebarItems: Array<TSidebarItems> = [
     path: "/admin/dashboard/collections",
     icon: <FolderIcon />,
     content: "Collections",
+  },
+  {
+    path: "/admin/dashboard/publishers",
+    icon: <HomeModernIcon />,
+    content: "Editeurs",
   },
 ];
 
