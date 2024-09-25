@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import {
   ArrowRightEndOnRectangleIcon,
   BookOpenIcon,
+  FolderIcon,
   PaintBrushIcon,
   TagIcon,
   UserIcon,
@@ -32,6 +33,11 @@ const sidebarItems: Array<TSidebarItems> = [
     path: "/admin/dashboard/categories",
     icon: <TagIcon />,
     content: "Catégories",
+  },
+  {
+    path: "/admin/dashboard/collections",
+    icon: <FolderIcon />,
+    content: "Collections",
   },
 ];
 
