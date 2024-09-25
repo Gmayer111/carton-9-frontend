@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/Gmayer111/lcbd-front/compare/v1.10.0...v1.11.0) (2024-09-25)
+
+
+### Features
+
+* create collections dashboard page ([#56](https://github.com/Gmayer111/lcbd-front/issues/56)) ([6f3cda2](https://github.com/Gmayer111/lcbd-front/commit/6f3cda233d0423e4df9156e6b8b094647d77887a))
+
 ## [1.10.0](https://github.com/Gmayer111/lcbd-front/compare/v1.9.0...v1.10.0) (2024-09-24)
 
 
