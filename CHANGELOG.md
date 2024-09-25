@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/Gmayer111/lcbd-front/compare/v1.11.0...v1.12.0) (2024-09-25)
+
+
+### Features
+
+* create publishers dashboard page ([#58](https://github.com/Gmayer111/lcbd-front/issues/58)) ([dab6784](https://github.com/Gmayer111/lcbd-front/commit/dab6784fdd725049b738fdb55a17b7238ce9085b))
+
 ## [1.11.0](https://github.com/Gmayer111/lcbd-front/compare/v1.10.0...v1.11.0) (2024-09-25)
 
 
