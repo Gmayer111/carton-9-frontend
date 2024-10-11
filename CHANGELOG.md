@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.13.0](https://github.com/Gmayer111/lcbd-front/compare/v1.12.0...v1.13.0) (2024-10-11)
+
+
+### Features
+
+* add table row onClick action ([#63](https://github.com/Gmayer111/lcbd-front/issues/63)) ([8d74f8d](https://github.com/Gmayer111/lcbd-front/commit/8d74f8dffca88a5e70b72039522b9c7e08c66505))
+* create comics type ([#60](https://github.com/Gmayer111/lcbd-front/issues/60)) ([d090e77](https://github.com/Gmayer111/lcbd-front/commit/d090e77efb8540c6048330fa7b598c0f463293e1))
+* create multi select component ([#62](https://github.com/Gmayer111/lcbd-front/issues/62)) ([d3da028](https://github.com/Gmayer111/lcbd-front/commit/d3da028d0422886b6247fe23d39a93fcd54dfe39))
+
+
+### Bug Fixes
+
+* refacto services type ([#65](https://github.com/Gmayer111/lcbd-front/issues/65)) ([4335a66](https://github.com/Gmayer111/lcbd-front/commit/4335a66a76335c7313bb04fbf38242c9065ebe7c))
+* remove close action prop within creat emodal ([#64](https://github.com/Gmayer111/lcbd-front/issues/64)) ([ad468a9](https://github.com/Gmayer111/lcbd-front/commit/ad468a9598a6faee7e1b319a978472a3933946cd))
+
 ## [1.12.0](https://github.com/Gmayer111/lcbd-front/compare/v1.11.0...v1.12.0) (2024-09-25)
 
 
