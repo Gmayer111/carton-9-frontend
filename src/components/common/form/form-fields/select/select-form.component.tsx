@@ -16,6 +16,7 @@ const SelectForm = forwardRef<
       label,
       errorMessage,
       selectOptions,
+      multiple,
       ...otherProps
     },
     ref
@@ -26,6 +27,7 @@ const SelectForm = forwardRef<
       <div className="select-container">
         <LabelForm label={label} id={id} />
         <select
+          multiple={multiple}
           id={id}
           name={name}
           disabled={disabled}

@@ -49,6 +49,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
           return (
             <SelectForm
               key={item.name}
+              multiple={item.multiple}
               selectOptions={item.selectOptions}
               placeholder={item.placeholder}
               label={item.label}
