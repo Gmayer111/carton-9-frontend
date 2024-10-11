@@ -16,7 +16,7 @@ export type TFieldItem = {
   registerOptions?: RegisterOptions<FieldValues, string>;
 };
 
-export type TFieldElement = "input" | "select" | "textarea";
+export type TFieldElement = "input" | "select" | "multi-select" | "textarea";
 
 export type TInputForm = {
   inputType?: TFieldType;
@@ -30,14 +30,16 @@ export type TFieldType =
   | "date"
   | "radio"
   | "tel"
-  | "file";
+  | "file"
+  | "number";
 
 export type TSelectForm = {
   selectOptions?: selectOption[];
+  multiple?: boolean;
 };
 
 type selectOption = {
-  value: string;
+  value: number;
   content: string;
 };
 
