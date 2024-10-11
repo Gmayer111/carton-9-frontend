@@ -4,6 +4,6 @@ export type TPublisher = {
   zipcode: string;
   city: string;
   country: string;
-  id?: string;
+  id?: number;
   picture?: string;
 };

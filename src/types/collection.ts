@@ -1,5 +1,7 @@
 export type TCollection = {
   total: number;
-  id?: string;
+  id?: number;
   name?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 };

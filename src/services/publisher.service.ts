@@ -1,11 +1,12 @@
 import { AxiosResponse } from "axios";
 import { TPublisher } from "src/types/publisher";
-import { TService } from "src/types/services";
+import { TServiceProperties, TServices } from "src/types/services";
 import { http } from "src/utils/http";
 
-type TPublisherService = TService<AxiosResponse<TPublisher[], any>>;
-
-export const PublisherService: TPublisherService = {
+export const PublisherService: TServices<
+  AxiosResponse<TPublisher[], any>,
+  TServiceProperties
+> = {
   create: (data) => {
     return http.post("/publishers", data);
   },

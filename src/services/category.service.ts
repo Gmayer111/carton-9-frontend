@@ -1,11 +1,12 @@
 import { AxiosResponse } from "axios";
 import { TCategory } from "src/types/category";
-import { TService } from "src/types/services";
+import { TServiceProperties, TServices } from "src/types/services";
 import { http } from "src/utils/http";
 
-type TCategoryService = TService<AxiosResponse<TCategory[], any>>;
-
-export const CategoryService: TCategoryService = {
+export const CategoryService: TServices<
+  AxiosResponse<TCategory[], any>,
+  TServiceProperties
+> = {
   create: (data) => {
     return http.post("/categories", data);
   },
