@@ -9,27 +9,32 @@ import Table, {
 
 export type TTableDashboardProps = {
   dashboardTitle?: string;
-  handleDisplayModal?: () => void;
-  selectedItem?: any;
+  selectedItem: (value: any) => void;
+  handleAction: (value: string) => void;
 };
 
 const TableDashboard = <T, K extends keyof T>({
   data,
   columns,
   dashboardTitle,
-  handleDisplayModal,
   selectedItem,
+  handleAction,
 }: TTableProps<T, K> & TTableDashboardProps) => {
   return (
     <div className="dashboard-container">
       <h1>{dashboardTitle}</h1>
       <TableRoot>
         <TableHeader>
-          <ButtonForm type="button" onClick={handleDisplayModal}>
+          <ButtonForm type="button" onClick={() => handleAction("openModal")}>
             Ajouter
           </ButtonForm>
         </TableHeader>
-        <Table selectedItem={selectedItem} columns={columns} data={data} />
+        <Table
+          selectedItem={selectedItem}
+          columns={columns}
+          data={data}
+          handleAction={handleAction}
+        />
       </TableRoot>
     </div>
   );

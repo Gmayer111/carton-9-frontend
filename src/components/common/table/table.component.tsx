@@ -5,12 +5,13 @@ import React, { ReactNode } from "react";
 export type TTableProps<T, K extends keyof T> = {
   columns: Array<TColumnDefinitionType<T, K>>;
   data: Array<T>;
-  selectedItem?: any;
+  selectedItem: (value: any) => void;
+  handleAction: (value: any) => void;
 };
 
 export type TColumnDefinitionType<T, K extends keyof T> = {
   key: K;
-  header?: string | number | ReactNode;
+  header?: string | number | ReactNode | [];
 };
 
 export type TTableGeneric<T> = {
@@ -26,7 +27,23 @@ const Table = <T, K extends keyof T>({
   data,
   columns,
   selectedItem,
+  handleAction,
 }: TTableProps<T, K>) => {
+  const handleClickTableRow = (row: T) => {
+    selectedItem(row);
+    handleAction("editModal");
+  };
+
+  const handleStopClickEventTableRow = (
+    e: React.MouseEvent<HTMLTableDataCellElement, MouseEvent>,
+    column: any,
+    row: T
+  ) => {
+    if (column === "actions") {
+      e.stopPropagation();
+      selectedItem(row);
+    }
+  };
   return (
     <section>
       <div className="table-container">
@@ -40,11 +57,17 @@ const Table = <T, K extends keyof T>({
           </thead>
           <tbody>
             {data?.map((row, index) => (
-              <tr onClick={() => selectedItem(row)} key={`row-${index}`}>
+              <tr onClick={() => handleClickTableRow(row)} key={`row-${index}`}>
                 {columns.map((column, index2) => {
                   const rowContent = row[column.key] as ReactNode;
+
                   return (
-                    <td key={`cell-${index2}`}>
+                    <td
+                      key={`cell-${index2}`}
+                      onClick={(e) =>
+                        handleStopClickEventTableRow(e, column.key, row)
+                      }
+                    >
                       {rowContent?.toString().includes("http") ? (
                         <Link target="_blank" href={rowContent.toString()}>
                           {rowContent}
