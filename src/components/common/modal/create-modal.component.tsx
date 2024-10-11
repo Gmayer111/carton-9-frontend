@@ -39,7 +39,6 @@ const CreateModal = ({
         <FormRoot
           methods={formMethods}
           onSubmit={handleSubmit}
-          handleCloseActionButton={closeModal}
           isModalForm={true}
         >
           <FormItems fieldItems={modalFields} />
