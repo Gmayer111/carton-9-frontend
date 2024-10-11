@@ -1,11 +1,12 @@
 import { AxiosResponse } from "axios";
-import { TService } from "src/types/services";
+import { TServiceProperties, TServices } from "src/types/services";
 import { TUser } from "src/types/user";
 import { http } from "src/utils/http";
 
-type TUserService = TService<AxiosResponse<TUser[], any>>;
-
-export const UserService: TUserService = {
+export const UserService: TServices<
+  AxiosResponse<TUser[], any>,
+  TServiceProperties
+> = {
   create: (data) => {
     return http.post("/users", data);
   },

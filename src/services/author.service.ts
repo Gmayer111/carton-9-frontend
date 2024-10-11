@@ -1,11 +1,12 @@
 import { AxiosResponse } from "axios";
 import { TAuthor } from "src/types/author";
-import { TService } from "src/types/services";
+import { TServiceProperties, TServices } from "src/types/services";
 import { http } from "src/utils/http";
 
-type TAuthorService = TService<AxiosResponse<TAuthor[], any>>;
-
-export const AuthorService: TAuthorService = {
+export const AuthorService: TServices<
+  AxiosResponse<TAuthor[], any>,
+  TServiceProperties
+> = {
   create: (data) => {
     return http.post("/authors", data);
   },
