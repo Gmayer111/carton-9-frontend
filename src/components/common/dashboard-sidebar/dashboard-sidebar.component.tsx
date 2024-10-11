@@ -4,9 +4,11 @@ import React, { ReactNode } from "react";
 import {
   ArrowRightEndOnRectangleIcon,
   BookOpenIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
   FolderIcon,
   HomeModernIcon,
   PaintBrushIcon,
+  RocketLaunchIcon,
   TagIcon,
   UserIcon,
 } from "@heroicons/react/24/solid";
@@ -24,6 +26,11 @@ const sidebarItems: Array<TSidebarItems> = [
     path: "/admin/dashboard/users",
     icon: <UserIcon />,
     content: "Utilisateurs",
+  },
+  {
+    path: "/admin/dashboard/comics",
+    icon: <ChatBubbleOvalLeftEllipsisIcon />,
+    content: "Bandes dessinées",
   },
   {
     path: "/admin/dashboard/authors",
