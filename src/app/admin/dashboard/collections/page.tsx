@@ -12,7 +12,7 @@ import { TCollection } from "src/types/collection";
 import { useCollections } from "src/hooks/collection.hook";
 import { CollectionService } from "src/services/collection.service";
 
-type TCollectionData = TTableGeneric<
+type TCollectionTableData = TTableGeneric<
   TCollection & {
     actions: string;
   }
@@ -24,6 +24,7 @@ export default function Page() {
   const [isOpenCancelModal, setIsOpenCancelModal] = useState<boolean>(false);
   const { data: collections, isError, isLoading } = useCollections();
   const [selectedCollection, setSelectedCollection] = useState<TCollection>();
+  const [displayModal, setDisplayModal] = useState("");
   const queryClient = useQueryClient();
 
   const defaultValues: TCollection = {
@@ -34,6 +35,17 @@ export default function Page() {
   const methods = useForm<TCollection | FieldValues>({
     defaultValues: selectedCollection,
   });
+
+  useEffect(() => {
+    if (displayModal === "editModal") {
+      setIsEditModal(true);
+    }
+
+    if (displayModal === "openModal") {
+      setIsOpenModal(true);
+    }
+    setDisplayModal("");
+  }, [displayModal]);
 
   useEffect(() => {
     if (isEditModal) {
@@ -119,7 +131,7 @@ export default function Page() {
 
   if (isLoading) return <div>...</div>;
 
-  const dataRows: Array<TCollectionData> = collections?.data.map(
+  const dataRows: Array<TCollectionTableData> = collections?.data.map(
     (collection) => ({
       ...collection,
       actions: (
@@ -145,7 +157,7 @@ export default function Page() {
     <div className="dashboard-container">
       <TableDashboard
         dashboardTitle="Collections"
-        handleDisplayModal={() => setIsOpenModal(true)}
+        handleAction={setDisplayModal}
         data={dataRows}
         selectedItem={setSelectedCollection}
         columns={[

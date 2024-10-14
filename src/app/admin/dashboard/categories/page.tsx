@@ -24,6 +24,7 @@ export default function Page() {
   const [isOpenCancelModal, setIsOpenCancelModal] = useState<boolean>(false);
   const { data: categories, isError, isLoading } = useCategoriess();
   const [selectedCategory, setSelectedCategory] = useState<TCategory>();
+  const [displayModal, setDisplayModal] = useState("");
   const queryClient = useQueryClient();
 
   const defaultValues: TCategory = {
@@ -35,6 +36,17 @@ export default function Page() {
   });
 
   useEffect(() => {
+    if (displayModal === "editModal") {
+      setIsEditModal(true);
+    }
+
+    if (displayModal === "openModal") {
+      setIsOpenModal(true);
+    }
+    setDisplayModal("");
+  }, [displayModal]);
+
+  useEffect(() => {
     if (isEditModal) {
       methods.reset(defaultValues, {
         keepValues: false,
@@ -43,7 +55,7 @@ export default function Page() {
     } else {
       methods.reset();
     }
-  }, [isEditModal]);
+  }, [isEditModal, isOpenModal]);
 
   const fields: TFields[] = [
     {
@@ -148,7 +160,7 @@ export default function Page() {
     <div className="dashboard-container">
       <TableDashboard
         dashboardTitle="Catégories"
-        handleDisplayModal={() => setIsOpenModal(true)}
+        handleAction={setDisplayModal}
         data={dataRows}
         selectedItem={setSelectedCategory}
         columns={[

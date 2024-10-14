@@ -12,7 +12,7 @@ import { TAuthor } from "src/types/author";
 import { useAuthors } from "src/hooks/author.hook";
 import { AuthorService } from "src/services/author.service";
 
-type TAuthorData = TTableGeneric<
+type TAuthorTableData = TTableGeneric<
   TAuthor & {
     actions: string;
   }
@@ -24,6 +24,7 @@ export default function Page() {
   const [isOpenCancelModal, setIsOpenCancelModal] = useState<boolean>(false);
   const { data: authors, isError, isLoading } = useAuthors();
   const [selectedAuthor, setSelectedAuthor] = useState<TAuthor>();
+  const [displayModal, setDisplayModal] = useState("");
   const queryClient = useQueryClient();
 
   const defaultValues: TAuthor = {
@@ -37,6 +38,17 @@ export default function Page() {
   const methods = useForm<TAuthor | FieldValues>({
     defaultValues: selectedAuthor,
   });
+
+  useEffect(() => {
+    if (displayModal === "editModal") {
+      setIsEditModal(true);
+    }
+
+    if (displayModal === "openModal") {
+      setIsOpenModal(true);
+    }
+    setDisplayModal("");
+  }, [displayModal]);
 
   useEffect(() => {
     if (isEditModal) {
@@ -156,7 +168,7 @@ export default function Page() {
 
   if (isLoading) return <div>...</div>;
 
-  const dataRows: Array<TAuthorData> = authors?.data.map((author) => ({
+  const dataRows: Array<TAuthorTableData> = authors?.data.map((author) => ({
     ...author,
     actions: (
       <DropdownButton
@@ -180,10 +192,14 @@ export default function Page() {
     <div className="dashboard-container">
       <TableDashboard
         dashboardTitle="Auteurs"
-        handleDisplayModal={() => setIsOpenModal(true)}
+        handleAction={setDisplayModal}
         data={dataRows}
         selectedItem={setSelectedAuthor}
         columns={[
+          {
+            key: "userName",
+            header: "Nom d'auteur",
+          },
           {
             key: "lastName",
             header: "Nom",
@@ -191,10 +207,6 @@ export default function Page() {
           {
             key: "firstName",
             header: "Prénom",
-          },
-          {
-            key: "userName",
-            header: "Nom d'auteur",
           },
           {
             key: "link",

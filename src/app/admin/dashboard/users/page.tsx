@@ -12,7 +12,7 @@ import { useUsers } from "src/hooks/user.hook";
 import { UserService } from "src/services/user.service";
 import { TUser } from "src/types/user";
 
-type TUserData = TTableGeneric<
+type TUserTableData = TTableGeneric<
   TUser & {
     actions: string;
   }
@@ -24,6 +24,8 @@ export default function Page() {
   const [isOpenCancelModal, setIsOpenCancelModal] = useState<boolean>(false);
   const { data: users, isError, isLoading } = useUsers();
   const [selectedUser, setSelectedUser] = useState<TUser>();
+  const [displayModal, setDisplayModal] = useState("");
+
   const queryClient = useQueryClient();
 
   const defaultValues: TUser = {
@@ -41,6 +43,17 @@ export default function Page() {
   });
 
   useEffect(() => {
+    if (displayModal === "editModal") {
+      setIsEditModal(true);
+    }
+
+    if (displayModal === "openModal") {
+      setIsOpenModal(true);
+    }
+    setDisplayModal("");
+  }, [displayModal]);
+
+  useEffect(() => {
     if (isEditModal) {
       methods.reset(defaultValues, {
         keepValues: false,
@@ -49,7 +62,7 @@ export default function Page() {
     } else {
       methods.reset();
     }
-  }, [isEditModal]);
+  }, [isEditModal, isOpenModal]);
 
   const fields: TFields[] = [
     {
@@ -132,8 +145,8 @@ export default function Page() {
           label: "Nationnalité",
           name: "nationality",
           selectOptions: [
-            { content: "Française", value: "fr" },
-            { content: "Anglaise", value: "en" },
+            { content: "Française", value: "Française" },
+            { content: "Anglaise", value: "Anglaise" },
           ],
         },
         {
@@ -199,7 +212,7 @@ export default function Page() {
 
   if (isLoading) return <div>...</div>;
 
-  const dataRows: Array<TUserData> = users?.data.map((user) => ({
+  const dataRows: Array<TUserTableData> = users?.data.map((user) => ({
     ...user,
     actions: (
       <DropdownButton
@@ -223,7 +236,7 @@ export default function Page() {
     <div className="dashboard-container">
       <TableDashboard
         dashboardTitle="Utilisateurs"
-        handleDisplayModal={() => setIsOpenModal(true)}
+        handleAction={setDisplayModal}
         data={dataRows}
         selectedItem={setSelectedUser}
         columns={[
@@ -242,6 +255,10 @@ export default function Page() {
           {
             key: "email",
             header: "Mail",
+          },
+          {
+            key: "nationality",
+            header: "Nationalité",
           },
           {
             key: "actions",
