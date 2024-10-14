@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.1](https://github.com/Gmayer111/lcbd-front/compare/v1.13.0...v1.13.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* replace handlemodal by handleaction ([#66](https://github.com/Gmayer111/lcbd-front/issues/66)) ([ab84aae](https://github.com/Gmayer111/lcbd-front/commit/ab84aae856be6936e7d2750aeb7d14179622dd2c))
+
 ## [1.13.0](https://github.com/Gmayer111/lcbd-front/compare/v1.12.0...v1.13.0) (2024-10-11)
 
 
