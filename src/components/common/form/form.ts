@@ -39,7 +39,7 @@ export type TSelectForm = {
 };
 
 type selectOption = {
-  value: number;
+  value: number | string;
   content: string;
 };
 
