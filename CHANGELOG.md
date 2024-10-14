@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.1](https://github.com/Gmayer111/lcbd-front/compare/v1.14.0...v1.14.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* add number tpye to selectOption ([#72](https://github.com/Gmayer111/lcbd-front/issues/72)) ([b916499](https://github.com/Gmayer111/lcbd-front/commit/b9164999174f08320ef01d30adbbf1b7cfb1609e))
+* replace currentAuthorsId by currentCategoriesId ([#70](https://github.com/Gmayer111/lcbd-front/issues/70)) ([849bcd4](https://github.com/Gmayer111/lcbd-front/commit/849bcd48d02e517acb702eee9405c23cde4a4a75))
+
 ## [1.14.0](https://github.com/Gmayer111/lcbd-front/compare/v1.13.1...v1.14.0) (2024-10-14)
 
 
