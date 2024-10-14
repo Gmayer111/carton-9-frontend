@@ -46,7 +46,7 @@ export default function Page() {
     currentAuthorsId: selectedComic?.currentAuthorsId?.map((author) =>
       author.toString()
     ) || ["0"],
-    currentCategoriesId: selectedComic?.currentAuthorsId?.map((category) =>
+    currentCategoriesId: selectedComic?.currentCategoriesId?.map((category) =>
       category.toString()
     ) || ["0"],
   };
@@ -191,7 +191,7 @@ export default function Page() {
             authorId: Number(authorId),
           })
         ),
-        Categories: data.currentAuthorsId.map(
+        Categories: data.currentCategoriesId.map(
           (categoryId: Pick<TComicAuthorCategory, "categoryId">) => ({
             categoryId: Number(categoryId),
           })
@@ -226,7 +226,6 @@ export default function Page() {
   const handleSubmitComic: SubmitHandler<TComic | FieldValues> = (data) => {
     updateOrCreateMutation.mutate(data);
   };
-  console.log(selectedComic?.id);
 
   const deleteMutation = useMutation({
     mutationFn: () => {
