@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/Gmayer111/lcbd-front/compare/v1.13.1...v1.14.0) (2024-10-14)
+
+
+### Features
+
+* modify comic create method param name ([#68](https://github.com/Gmayer111/lcbd-front/issues/68)) ([658b206](https://github.com/Gmayer111/lcbd-front/commit/658b2060325dfe994c9196e83da4fb9cd29bf573))
+
 ## [1.13.1](https://github.com/Gmayer111/lcbd-front/compare/v1.13.0...v1.13.1) (2024-10-14)
 
 
