@@ -7,8 +7,8 @@ export const ComicService: TServices<
   AxiosResponse<TComic[], any>,
   TComicServices
 > = {
-  create: (comic, author) => {
-    return http.post("/comics", comic, author);
+  create: (comic, comicAssociations) => {
+    return http.post("/comics", comic, comicAssociations);
   },
   update: (id, data) => {
     return http.put(`/comics/${id}`, data);
