@@ -8,9 +8,6 @@ import CancelModal from "src/components/common/modal/cancel-modal.component";
 import CreateModal from "src/components/common/modal/create-modal.component";
 import { TTableGeneric } from "src/components/common/table/table.component";
 import TableDashboard from "src/components/dashboard/table-dashboard.component";
-import { TAuthor } from "src/types/author";
-import { useAuthors } from "src/hooks/author.hook";
-import { AuthorService } from "src/services/author.service";
 import { TPublisher } from "src/types/publisher";
 import { usePublishers } from "src/hooks/publisher.hook";
 import { PublisherService } from "src/services/publisher.service";
@@ -27,6 +24,7 @@ export default function Page() {
   const [isOpenCancelModal, setIsOpenCancelModal] = useState<boolean>(false);
   const { data: publishers, isError, isLoading } = usePublishers();
   const [selectedPublisher, setSelectedPublisher] = useState<TPublisher>();
+  const [displayModal, setDisplayModal] = useState("");
   const queryClient = useQueryClient();
 
   const defaultValues: TPublisher = {
@@ -40,6 +38,17 @@ export default function Page() {
   const methods = useForm<TPublisher | FieldValues>({
     defaultValues: selectedPublisher,
   });
+
+  useEffect(() => {
+    if (displayModal === "editModal") {
+      setIsEditModal(true);
+    }
+
+    if (displayModal === "openModal") {
+      setIsOpenModal(true);
+    }
+    setDisplayModal("");
+  }, [displayModal]);
 
   useEffect(() => {
     if (isEditModal) {
@@ -212,7 +221,7 @@ export default function Page() {
     <div className="dashboard-container">
       <TableDashboard
         dashboardTitle="Editeurs"
-        handleDisplayModal={() => setIsOpenModal(true)}
+        handleAction={setDisplayModal}
         data={dataRows}
         selectedItem={setSelectedPublisher}
         columns={[
